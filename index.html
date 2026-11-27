@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AKsys Technologies — Your Technology Partner | Kota, Rajasthan</title>
+<meta name="description" content="AKsys Technologies — Web, Mobile, Cloud & AI solutions. Your technology partner from idea to production. Kota, Rajasthan.">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:   #0f172a;
+  --navy2:  #1e293b;
+  --blue:   #0ea5e9;
+  --blue2:  #0284c7;
+  --orange: #f97316;
+  --orange2:#ea580c;
+  --green:  #10b981;
+  --purple: #8b5cf6;
+  --text:   #334155;
+  --text2:  #64748b;
+  --text3:  #94a3b8;
+  --bg:     #ffffff;
+  --bg2:    #f8fafc;
+  --bg3:    #f1f5f9;
+  --border: #e2e8f0;
+  --border2:#cbd5e1;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',sans-serif;font-weight:400;line-height:1.65;overflow-x:hidden;}
+::-webkit-scrollbar{width:5px;}
+::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px;}
+a{text-decoration:none;color:inherit;}
+img{display:block;}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:999;height:56px;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 3%;transition:box-shadow .2s;}
+nav.scrolled{box-shadow:0 1px 16px rgba(0,0,0,.08);}
+.brand{display:flex;align-items:center;gap:8px;flex-shrink:0;text-decoration:none;margin-right:24px;}
+.brand-icon{width:28px;height:28px;}
+.brand-name{font-size:17px;font-weight:800;color:var(--navy);letter-spacing:-.5px;white-space:nowrap;line-height:1;}
+.brand-name em{color:var(--blue);font-style:normal;}
+.brand-tag{font-size:7px;letter-spacing:2.5px;text-transform:uppercase;color:var(--text3);margin-top:1px;}
+.nav-links{display:flex;gap:2px;list-style:none;flex:1;align-items:center;}
+.nav-links a{font-size:13px;font-weight:500;color:var(--text2);transition:color .2s;white-space:nowrap;padding:5px 9px;border-radius:6px;}
+.nav-links a:hover{color:var(--navy);background:var(--bg3);}
+.nav-btns{display:flex;gap:6px;flex-shrink:0;margin-left:8px;}
+.nbtn{padding:6px 14px;border-radius:7px;font-size:12.5px;font-weight:600;cursor:pointer;transition:all .2s;font-family:'Plus Jakarta Sans',sans-serif;white-space:nowrap;line-height:1.4;}
+.nbtn-o{background:transparent;border:1.5px solid var(--border2);color:var(--text);}
+.nbtn-o:hover{border-color:var(--blue);color:var(--blue);}
+.nbtn-s{background:var(--navy);border:1.5px solid var(--navy);color:#fff;}
+.nbtn-s:hover{background:var(--navy2);}
+.hbg{display:none;flex-direction:column;gap:4px;background:none;border:none;cursor:pointer;padding:4px;flex-shrink:0;margin-left:8px;}
+.hbg span{display:block;width:20px;height:2px;background:var(--navy);border-radius:1px;}
+.mob-nav{display:none;position:fixed;top:56px;left:0;right:0;z-index:998;background:#fff;border-bottom:1px solid var(--border);padding:20px 5%;flex-direction:column;gap:0;}
+.mob-nav.open{display:flex;}
+.mob-nav a{font-size:15px;font-weight:500;color:var(--text);padding:12px 0;border-bottom:1px solid var(--border);}
+.mob-nav a:last-child{border:none;}
+
+/* ── HERO ── */
+.hero{padding:110px 6% 80px;background:var(--bg);border-bottom:1px solid var(--border);}
+.hero-inner{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.hero-left{}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:7px;background:#f0f9ff;border:1px solid #bae6fd;border-radius:100px;padding:6px 14px;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--blue2);margin-bottom:24px;}
+.eyebrow-dot{width:6px;height:6px;border-radius:50%;background:var(--blue);animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.3;transform:scale(1.6);}}
+.hero h1{font-size:clamp(36px,5vw,58px);font-weight:800;color:var(--navy);line-height:1.08;letter-spacing:-2px;margin-bottom:20px;}
+.hero h1 span{color:var(--blue);}
+.hero h1 em{color:var(--orange);font-style:normal;}
+.hero-desc{font-size:17px;color:var(--text2);font-weight:400;line-height:1.8;margin-bottom:36px;max-width:480px;}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:44px;}
+.hcta-p{display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:#fff;border-radius:9px;padding:14px 28px;font-size:15px;font-weight:600;cursor:pointer;transition:all .2s;}
+.hcta-p:hover{background:var(--navy2);transform:translateY(-1px);box-shadow:0 8px 24px rgba(15,23,42,.2);}
+.hcta-s{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--text);border:1.5px solid var(--border2);border-radius:9px;padding:14px 28px;font-size:15px;font-weight:600;cursor:pointer;transition:all .2s;}
+.hcta-s:hover{border-color:var(--orange);color:var(--orange);}
+.hero-trust{display:flex;gap:20px;flex-wrap:wrap;}
+.htrust{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--text2);}
+.htrust-icon{width:20px;height:20px;border-radius:50%;background:var(--bg3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:11px;}
+.hero-right{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:32px;}
+.hero-card-title{font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--text3);margin-bottom:20px;}
+.hero-stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;}
+.hstat{background:#fff;border:1px solid var(--border);border-radius:12px;padding:18px 16px;}
+.hstat-n{font-size:30px;font-weight:800;color:var(--navy);line-height:1;letter-spacing:-1px;}
+.hstat-n em{color:var(--orange);font-style:normal;}
+.hstat-l{font-size:12px;color:var(--text2);margin-top:4px;font-weight:500;}
+.service-pills{display:flex;flex-direction:column;gap:8px;}
+.spill{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--border);border-radius:10px;padding:11px 14px;font-size:13.5px;font-weight:500;color:var(--text);}
+.spill-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+
+/* ── SECTIONS ── */
+.sec{padding:88px 6%;}
+.sec-alt{background:var(--bg2);}
+.stag{display:inline-block;font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:600;margin-bottom:12px;}
+.stag-blue{color:var(--blue2);}
+.stag-orange{color:var(--orange);}
+.sh{font-size:clamp(24px,3.5vw,40px);font-weight:800;color:var(--navy);line-height:1.1;letter-spacing:-1px;margin-bottom:12px;}
+.sd{font-size:16px;color:var(--text2);line-height:1.78;max-width:560px;}
+.sec-hdr{margin-bottom:52px;}
+.sec-hdr-center{text-align:center;}
+.sec-hdr-center .sd{margin:0 auto;}
+
+/* ── SERVICES ── */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1120px;margin:0 auto;}
+.svc{background:#fff;border:1px solid var(--border);border-radius:16px;padding:28px 24px;transition:all .25s;position:relative;}
+.svc:hover{border-color:var(--blue);box-shadow:0 8px 32px rgba(14,165,233,.1);transform:translateY(-3px);}
+.svc-icon{width:44px;height:44px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:16px;}
+.svc-t{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:9px;}
+.svc-d{font-size:13.5px;color:var(--text2);line-height:1.75;}
+.svc-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:14px;}
+.stk{font-size:11px;font-weight:500;padding:3px 9px;border-radius:6px;background:var(--bg3);color:var(--text2);border:1px solid var(--border);}
+
+/* ── NUMBAR ── */
+.numbar{background:var(--navy);padding:52px 6%;display:grid;grid-template-columns:repeat(4,1fr);}
+.nb{text-align:center;padding:14px;border-right:1px solid rgba(255,255,255,.1);}
+.nb:last-child{border:none;}
+.nb-n{font-size:40px;font-weight:800;color:#fff;line-height:1;letter-spacing:-1px;}
+.nb-n em{color:var(--orange);font-style:normal;}
+.nb-l{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.45);margin-top:6px;font-weight:500;}
+
+/* ── AI ── */
+.ai-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;max-width:1120px;margin:0 auto;}
+.ai-list{display:flex;flex-direction:column;gap:12px;margin-top:6px;}
+.ai-item{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--border);border-radius:11px;padding:13px 16px;transition:all .2s;}
+.ai-item:hover{border-color:var(--purple);box-shadow:0 4px 16px rgba(139,92,246,.08);}
+.ai-item-ico{font-size:20px;width:34px;text-align:center;}
+.ai-item-name{font-size:14px;font-weight:600;color:var(--navy);}
+.ai-item-tag{margin-left:auto;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;color:var(--purple);background:#f5f3ff;border:1px solid #ddd6fe;padding:3px 8px;border-radius:6px;}
+.ai-pts{display:flex;flex-direction:column;gap:12px;margin-top:22px;}
+.ai-pt{display:flex;gap:12px;align-items:flex-start;font-size:14px;color:var(--text2);line-height:1.65;}
+.ai-pt-check{width:20px;height:20px;border-radius:50%;background:#f5f3ff;border:1px solid #ddd6fe;display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0;margin-top:1px;color:var(--purple);}
+
+/* ── TECH ── */
+.tech-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:1120px;margin:0 auto;}
+.tc{background:#fff;border:1px solid var(--border);border-radius:14px;padding:26px 22px;}
+.tc-h{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--border);}
+.tp-wrap{display:flex;flex-wrap:wrap;gap:7px;}
+.tp{display:flex;align-items:center;gap:6px;background:var(--bg2);border:1px solid var(--border);border-radius:7px;padding:6px 11px;font-size:12.5px;font-weight:500;color:var(--text);transition:all .2s;}
+.tp:hover{background:#fff;border-color:var(--border2);color:var(--navy);}
+.tpdot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+
+/* ── PROJECTS ── */
+.proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:1120px;margin:0 auto;}
+.proj{background:#fff;border:1px solid var(--border);border-radius:14px;padding:26px 24px;transition:all .22s;}
+.proj:hover{border-color:var(--blue);box-shadow:0 6px 24px rgba(14,165,233,.09);transform:translateY(-2px);}
+.ptype{display:inline-block;font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:3px 10px;border-radius:6px;margin-bottom:12px;}
+.pt{font-size:15.5px;font-weight:700;color:var(--navy);margin-bottom:7px;line-height:1.35;}
+.pd{font-size:13px;color:var(--text2);line-height:1.72;margin-bottom:13px;}
+.pstack{display:flex;flex-wrap:wrap;gap:5px;}
+.ps{font-size:10.5px;font-weight:500;padding:3px 8px;border-radius:5px;background:var(--bg3);border:1px solid var(--border);color:var(--text2);}
+
+/* ── DOMAINS ── */
+.dom-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:1120px;margin:0 auto;}
+.dom{background:#fff;border:1px solid var(--border);border-radius:12px;padding:20px 18px;display:flex;gap:12px;align-items:flex-start;transition:all .2s;}
+.dom:hover{border-color:var(--blue);transform:translateY(-2px);}
+.dom-ico{font-size:22px;flex-shrink:0;margin-top:1px;}
+.dom-t{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:4px;}
+.dom-d{font-size:12.5px;color:var(--text2);line-height:1.6;}
+
+/* ── AKSYSPRO ── */
+#aksyspro{background:var(--navy);padding:96px 6%;}
+.pro-wrap{max-width:1120px;margin:0 auto;}
+.pro-header{text-align:center;margin-bottom:56px;}
+.pro-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(249,115,22,.12);border:1px solid rgba(249,115,22,.3);border-radius:100px;padding:6px 16px;font-size:10px;letter-spacing:3px;text-transform:uppercase;font-weight:600;color:var(--orange);margin-bottom:18px;}
+.pro-logo{font-size:clamp(38px,6vw,68px);font-weight:800;color:#fff;line-height:1;letter-spacing:-2px;margin-bottom:8px;}
+.pro-logo em{color:var(--blue);font-style:normal;}
+.pro-logo span{color:var(--orange);}
+.pro-tagline{font-size:13px;letter-spacing:4px;text-transform:uppercase;font-weight:600;color:rgba(249,115,22,.7);margin-bottom:16px;}
+.pro-sub{font-size:17px;color:rgba(255,255,255,.6);font-weight:400;max-width:580px;margin:0 auto 24px;line-height:1.8;}
+.pro-checks{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;}
+.pcheck{display:flex;align-items:center;gap:6px;font-size:13px;color:rgba(255,255,255,.55);font-weight:500;}
+.pcheck::before{content:'✓';color:var(--green);font-weight:700;}
+.pro-feats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:48px;}
+.pf{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:14px;padding:24px 20px;transition:all .22s;}
+.pf:hover{background:rgba(255,255,255,.08);border-color:rgba(249,115,22,.3);}
+.pf-ico{font-size:24px;margin-bottom:11px;}
+.pf-t{font-size:15px;font-weight:700;color:#fff;margin-bottom:6px;}
+.pf-d{font-size:13px;color:rgba(255,255,255,.5);line-height:1.7;}
+.pf-w{display:inline-block;margin-top:10px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--orange);font-weight:600;opacity:.7;}
+.pro-pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:880px;margin:0 auto 48px;}
+.pp{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:16px;padding:30px 24px;transition:all .22s;}
+.pp.hot{background:rgba(249,115,22,.08);border-color:rgba(249,115,22,.4);}
+.pp-popular{font-size:9.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;background:var(--orange);color:#fff;padding:3px 10px;border-radius:100px;display:inline-block;margin-bottom:14px;}
+.pp-name{font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:600;color:rgba(255,255,255,.4);margin-bottom:10px;}
+.pp-price{font-size:40px;font-weight:800;color:#fff;line-height:1;letter-spacing:-1px;margin-bottom:4px;}
+.pp-price sup{font-size:18px;vertical-align:top;margin-top:6px;color:rgba(255,255,255,.5);}
+.pp-price sub{font-size:13px;color:rgba(255,255,255,.4);font-weight:400;}
+.pp-desc{font-size:13px;color:rgba(255,255,255,.45);margin-bottom:20px;}
+.pp-ul{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:24px;}
+.pp-ul li{display:flex;gap:8px;font-size:13px;color:rgba(255,255,255,.65);}
+.pp-ul li::before{content:'✓';color:var(--green);font-weight:700;font-size:12px;flex-shrink:0;margin-top:1px;}
+.pp-ul li.na{color:rgba(255,255,255,.25);}
+.pp-ul li.na::before{content:'—';color:rgba(255,255,255,.2);}
+.ppbtn{width:100%;padding:12px;border-radius:9px;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;border:1.5px solid;}
+.ppbtn-o{background:transparent;border-color:rgba(255,255,255,.15);color:rgba(255,255,255,.8);}
+.ppbtn-o:hover{border-color:rgba(255,255,255,.4);color:#fff;}
+.ppbtn-s{background:var(--orange);border-color:var(--orange);color:#fff;}
+.ppbtn-s:hover{background:var(--orange2);}
+.pro-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.pcta-p{display:inline-flex;align-items:center;gap:8px;background:var(--orange);color:#fff;border:none;border-radius:9px;padding:15px 32px;font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:600;cursor:pointer;transition:all .2s;}
+.pcta-p:hover{background:var(--orange2);transform:translateY(-1px);}
+.pcta-s{display:inline-flex;align-items:center;gap:8px;background:transparent;color:rgba(255,255,255,.75);border:1.5px solid rgba(255,255,255,.2);border-radius:9px;padding:15px 32px;font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:500;cursor:pointer;transition:all .2s;}
+.pcta-s:hover{border-color:rgba(255,255,255,.5);color:#fff;}
+
+/* ── WHY ── */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;max-width:1120px;margin:0 auto;}
+.why-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.wc{background:#fff;border:1px solid var(--border);border-radius:12px;padding:20px 18px;transition:all .2s;}
+.wc:hover{border-color:var(--blue);transform:translateY(-2px);}
+.wc-ico{font-size:22px;margin-bottom:8px;}
+.wc-t{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:4px;}
+.wc-d{font-size:12.5px;color:var(--text2);line-height:1.65;}
+
+/* ── CTA BAND ── */
+.cta-band{background:var(--bg3);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:80px 6%;text-align:center;}
+.cta-band h2{font-size:clamp(26px,4vw,46px);font-weight:800;color:var(--navy);letter-spacing:-1.5px;margin-bottom:14px;line-height:1.1;}
+.cta-band h2 span{color:var(--blue);}
+.cta-band p{font-size:16px;color:var(--text2);margin-bottom:36px;}
+.cta-band .btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+
+/* ── CONTACT ── */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;max-width:1120px;margin:0 auto;align-items:start;}
+.cinfo{display:flex;flex-direction:column;gap:16px;margin-top:28px;}
+.ci{display:flex;align-items:flex-start;gap:13px;}
+.ci-ico{width:40px;height:40px;border-radius:10px;background:var(--bg3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+.ci-l{font-size:10.5px;letter-spacing:2px;text-transform:uppercase;font-weight:600;color:var(--text3);margin-bottom:2px;}
+.ci-v{font-size:14px;color:var(--text);font-weight:500;}
+.ci-v a{color:var(--blue);}
+.cform{background:var(--bg2);border:1px solid var(--border);border-radius:18px;padding:34px 30px;}
+.cf-h{font-size:20px;font-weight:800;color:var(--navy);margin-bottom:24px;letter-spacing:-.5px;}
+.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;}
+.cf-g{display:flex;flex-direction:column;gap:6px;margin-bottom:12px;}
+.cf-l{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;color:var(--text3);}
+.cf-i,.cf-s,.cf-ta{background:#fff;border:1.5px solid var(--border);border-radius:9px;padding:11px 14px;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;color:var(--text);outline:none;width:100%;transition:border-color .2s;}
+.cf-i:focus,.cf-s:focus,.cf-ta:focus{border-color:var(--blue);}
+.cf-ta{resize:vertical;min-height:100px;}
+.cf-btn{width:100%;padding:13px;background:var(--navy);border:none;border-radius:9px;font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:700;color:#fff;cursor:pointer;transition:all .2s;}
+.cf-btn:hover{background:var(--navy2);box-shadow:0 6px 20px rgba(15,23,42,.2);}
+
+/* ── FOOTER ── */
+footer{background:var(--navy);padding:60px 6% 28px;}
+.ft{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:40px;}
+.fb-d{font-size:13.5px;color:rgba(255,255,255,.4);font-weight:400;line-height:1.75;margin-top:14px;max-width:280px;}
+.fc h4{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:16px;}
+.fc ul{list-style:none;display:flex;flex-direction:column;gap:9px;}
+.fc ul li a{color:rgba(255,255,255,.45);font-size:13.5px;font-weight:400;transition:color .2s;}
+.fc ul li a:hover{color:#fff;}
+.fb-bot{display:flex;justify-content:space-between;align-items:center;padding-top:20px;border-top:1px solid rgba(255,255,255,.08);font-size:12px;color:rgba(255,255,255,.3);}
+.fb-bot a{color:var(--blue);}
+
+/* ── REVEAL ── */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease;}
+.rv.on{opacity:1;transform:translateY(0);}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .nav-links{display:none;}
+  .hbg{display:flex;}
+  .hero-inner{grid-template-columns:1fr;}
+  .hero-right{display:none;}
+  .svc-grid,.proj-grid,.pro-feats,.pro-pricing{grid-template-columns:1fr 1fr;}
+  .ai-grid,.why-grid,.contact-grid{grid-template-columns:1fr;}
+  .tech-grid{grid-template-columns:1fr;}
+  .dom-grid{grid-template-columns:1fr 1fr;}
+  .numbar{grid-template-columns:repeat(2,1fr);}
+  .nb:nth-child(2){border-right:none;}
+  .ft{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:640px){
+  .svc-grid,.proj-grid,.pro-feats,.pro-pricing,.why-cards,.dom-grid,.cf-row{grid-template-columns:1fr;}
+  .ft{grid-template-columns:1fr;}
+  .fb-bot{flex-direction:column;gap:10px;text-align:center;}
+  .sec{padding:64px 4%;}
+  nav{padding:0 4%;}
+  .hero{padding:100px 4% 64px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#home" class="brand">
+    <svg class="brand-icon" viewBox="0 0 32 32" fill="none">
+      <defs><linearGradient id="ng" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0ea5e9"/><stop offset="100%" stop-color="#0284c7"/></linearGradient></defs>
+      <circle cx="16" cy="16" r="14.5" stroke="#e2e8f0" stroke-width="1.2" fill="none"/>
+      <line x1="16" y1="4.5" x2="16" y2="16" stroke="#cbd5e1" stroke-width="1.3"/>
+      <line x1="16" y1="16" x2="6.5" y2="25.5" stroke="#cbd5e1" stroke-width="1.3"/>
+      <line x1="16" y1="16" x2="25.5" y2="25.5" stroke="#cbd5e1" stroke-width="1.3"/>
+      <circle cx="16" cy="16" r="5" fill="#f0f9ff" stroke="url(#ng)" stroke-width="1.5"/>
+      <circle cx="16" cy="16" r="2.2" fill="url(#ng)"/>
+      <circle cx="16" cy="4.5" r="2.8" fill="#f0f9ff" stroke="#0ea5e9" stroke-width="1.2"/>
+      <circle cx="16" cy="4.5" r="1.2" fill="#0ea5e9"/>
+      <circle cx="6.5" cy="25.5" r="2.6" fill="#f0f9ff" stroke="#0284c7" stroke-width="1.2"/>
+      <circle cx="6.5" cy="25.5" r="1.1" fill="#0284c7"/>
+      <circle cx="25.5" cy="25.5" r="2.6" fill="#f0f9ff" stroke="#0ea5e9" stroke-width="1.2"/>
+      <circle cx="25.5" cy="25.5" r="1.1" fill="#0ea5e9"/>
+    </svg>
+    <div>
+      <div class="brand-name"><em>AK</em>sys</div>
+      <div class="brand-tag">Technologies</div>
+    </div>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#ai">AI & Cloud</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#tech">Tech Stack</a></li>
+    <li><a href="#aksyspro">AksysPro</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+  <div class="nav-btns">
+    <a href="#aksyspro" class="nbtn nbtn-o">AksysPro ↗</a>
+    <a href="#contact" class="nbtn nbtn-s">Get in Touch</a>
+  </div>
+  <button class="hbg" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="mob-nav" id="mobNav">
+  <a href="#services">Services</a>
+  <a href="#ai">AI &amp; Cloud</a>
+  <a href="#projects">Projects</a>
+  <a href="#tech">Tech Stack</a>
+  <a href="#aksyspro">AksysPro</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-eyebrow"><div class="eyebrow-dot"></div>Software Company · Kota, Rajasthan</div>
+      <h1>Your <span>Technology</span><br>Partner —<br>Idea to <em>Production</em></h1>
+      <p class="hero-desc">We design, build and scale enterprise-grade web apps, mobile apps, cloud systems and AI-powered solutions. 16+ years of end-to-end delivery across India and globally.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="hcta-p">Start a Project →</a>
+        <a href="#aksyspro" class="hcta-s">🧾 AksysPro Billing</a>
+      </div>
+      <div class="hero-trust">
+        <div class="htrust"><div class="htrust-icon">✓</div>16+ Years Experience</div>
+        <div class="htrust"><div class="htrust-icon">✓</div>40+ Projects Delivered</div>
+        <div class="htrust"><div class="htrust-icon">✓</div>USA · Global Delivery</div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-card-title">Company at a Glance</div>
+      <div class="hero-stats-grid">
+        <div class="hstat"><div class="hstat-n">16<em>+</em></div><div class="hstat-l">Years Delivering</div></div>
+        <div class="hstat"><div class="hstat-n">40<em>+</em></div><div class="hstat-l">Projects Built</div></div>
+        <div class="hstat"><div class="hstat-n">8<em>+</em></div><div class="hstat-l">Industry Domains</div></div>
+        <div class="hstat"><div class="hstat-n">USA<em> ✓</em></div><div class="hstat-l">Global Clients</div></div>
+      </div>
+      <div class="service-pills">
+        <div class="spill"><span class="spill-dot" style="background:#0ea5e9"></span>Web Application Development</div>
+        <div class="spill"><span class="spill-dot" style="background:#f97316"></span>Mobile App Development</div>
+        <div class="spill"><span class="spill-dot" style="background:#10b981"></span>Cloud Architecture &amp; Integration</div>
+        <div class="spill"><span class="spill-dot" style="background:#8b5cf6"></span>AI &amp; LLM Integrations</div>
+        <div class="spill"><span class="spill-dot" style="background:#0284c7"></span>API &amp; Microservices</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="sec sec-alt" id="services">
+  <div class="sec-hdr sec-hdr-center rv">
+    <div class="stag stag-blue">What We Build</div>
+    <h2 class="sh">Our Services</h2>
+    <p class="sd">From a single API to a full enterprise platform — we deliver clean, scalable software with complete ownership.</p>
+  </div>
+  <div class="svc-grid">
+    <div class="svc rv">
+      <div class="svc-icon" style="background:#f0f9ff;"><span>🌐</span></div>
+      <div class="svc-t">Web Application Development</div>
+      <p class="svc-d">Enterprise portals, dashboards, SPAs and CMS platforms. Scalable, secure and fully responsive — built to perform under real-world load.</p>
+      <div class="svc-tags"><span class="stk">React</span><span class="stk">Next.js</span><span class="stk">Angular</span><span class="stk">.NET Core</span><span class="stk">ASP.NET MVC</span></div>
+    </div>
+    <div class="svc rv">
+      <div class="svc-icon" style="background:#fff7ed;"><span>📱</span></div>
+      <div class="svc-t">Mobile App Development</div>
+      <p class="svc-d">Cross-platform and native apps for Android and iOS. Offline support, push notifications, biometric auth and smooth UX for real users in the field.</p>
+      <div class="svc-tags"><span class="stk">React Native</span><span class="stk">Android</span><span class="stk">iOS</span><span class="stk">Expo</span><span class="stk">Azure AD</span></div>
+    </div>
+    <div class="svc rv">
+      <div class="svc-icon" style="background:#f0fdf4;"><span>☁️</span></div>
+      <div class="svc-t">Cloud Architecture &amp; Integration</div>
+      <p class="svc-d">Cloud-native solutions on Azure, AWS and Firebase. Serverless functions, event-driven design, B2C authentication, blob storage and auto-scaling infrastructure.</p>
+      <div class="svc-tags"><span class="stk">Azure</span><span class="stk">AWS Lambda</span><span class="stk">Firebase</span><span class="stk">Event Grid</span><span class="stk">Serverless</span></div>
+    </div>
+    <div class="svc rv">
+      <div class="svc-icon" style="background:#faf5ff;"><span>🤖</span></div>
+      <div class="svc-t">AI &amp; LLM Integrations</div>
+      <p class="svc-d">Integrate ChatGPT, Gemini, Claude and LLaMA into your product. AI chatbots, document extraction, smart search, resume parsing and workflow automation.</p>
+      <div class="svc-tags"><span class="stk">ChatGPT</span><span class="stk">Gemini</span><span class="stk">Claude</span><span class="stk">LLaMA</span><span class="stk">LangChain</span></div>
+    </div>
+    <div class="svc rv">
+      <div class="svc-icon" style="background:#f0f9ff;"><span>⚙️</span></div>
+      <div class="svc-t">API &amp; Microservices</div>
+      <p class="svc-d">RESTful APIs, real-time apps with SignalR and WebSockets, Docker-based microservices, Azure DevOps and GitHub Actions CI/CD for zero-downtime deployments.</p>
+      <div class="svc-tags"><span class="stk">Web API</span><span class="stk">Node.js</span><span class="stk">Python</span><span class="stk">SignalR</span><span class="stk">Docker</span><span class="stk">CI/CD</span></div>
+    </div>
+    <div class="svc rv">
+      <div class="svc-icon" style="background:#fff7ed;"><span>🛒</span></div>
+      <div class="svc-t">E-Commerce &amp; System Modernization</div>
+      <p class="svc-d">Custom online stores with payment integration and order management. Also modernize legacy VB/.NET applications to modern React + .NET Core architectures.</p>
+      <div class="svc-tags"><span class="stk">React</span><span class="stk">Razorpay</span><span class="stk">Stripe</span><span class="stk">.NET Core</span><span class="stk">SQL Server</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- NUMBAR -->
+<div class="numbar">
+  <div class="nb rv"><div class="nb-n">16<em>+</em></div><div class="nb-l">Years of Delivery</div></div>
+  <div class="nb rv"><div class="nb-n">40<em>+</em></div><div class="nb-l">Enterprise Projects</div></div>
+  <div class="nb rv"><div class="nb-n">USA<em> ✓</em></div><div class="nb-l">Global Delivery</div></div>
+  <div class="nb rv"><div class="nb-n">8<em>+</em></div><div class="nb-l">Industry Domains</div></div>
+</div>
+
+<!-- AI -->
+<section class="sec" id="ai">
+  <div class="ai-grid">
+    <div class="rv">
+      <div class="stag stag-blue">Advanced Capability</div>
+      <h2 class="sh">AI &amp; LLM Integration</h2>
+      <p class="sd" style="margin-bottom:22px;">We build production-ready AI into your product — not just demos. Our team has shipped AI features using OpenAI and Gemini inside enterprise low-code platforms.</p>
+      <div class="ai-pts">
+        <div class="ai-pt"><div class="ai-pt-check">✓</div>AI chatbots with custom knowledge base and conversation memory</div>
+        <div class="ai-pt"><div class="ai-pt-check">✓</div>Document intelligence — extract, classify and summarize PDFs at scale</div>
+        <div class="ai-pt"><div class="ai-pt-check">✓</div>Smart search, auto-recommendations and resume parsing pipelines</div>
+        <div class="ai-pt"><div class="ai-pt-check">✓</div>Python FastAPI + LangChain backends for ML-ready production APIs</div>
+        <div class="ai-pt"><div class="ai-pt-check">✓</div>Azure OpenAI integrated with Azure Communication Services (ACS)</div>
+        <div class="ai-pt"><div class="ai-pt-check">✓</div>Development accelerated by GitHub Copilot and Cursor AI daily</div>
+      </div>
+    </div>
+    <div class="rv">
+      <div class="stag stag-blue" style="margin-bottom:16px;">AI Platforms We Integrate</div>
+      <div class="ai-list">
+        <div class="ai-item"><div class="ai-item-ico">🤖</div><div class="ai-item-name">ChatGPT / GPT-4o</div><span class="ai-item-tag">OpenAI</span></div>
+        <div class="ai-item"><div class="ai-item-ico">💎</div><div class="ai-item-name">Gemini 1.5 Pro</div><span class="ai-item-tag">Google</span></div>
+        <div class="ai-item"><div class="ai-item-ico">🧠</div><div class="ai-item-name">Claude 3.5 / 4</div><span class="ai-item-tag">Anthropic</span></div>
+        <div class="ai-item"><div class="ai-item-ico">🦙</div><div class="ai-item-name">LLaMA 3</div><span class="ai-item-tag">Meta · Self-Hosted</span></div>
+        <div class="ai-item"><div class="ai-item-ico">⚡</div><div class="ai-item-name">Azure OpenAI Service</div><span class="ai-item-tag">Enterprise</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section class="sec sec-alt" id="tech">
+  <div class="sec-hdr sec-hdr-center rv">
+    <div class="stag stag-blue">Technology</div>
+    <h2 class="sh">Our Tech Stack</h2>
+    <p class="sd">Battle-tested across 40+ enterprise projects over 16+ years of delivery.</p>
+  </div>
+  <div class="tech-grid">
+    <div class="tc rv"><div class="tc-h" style="color:#0284c7;">Backend &amp; APIs</div>
+      <div class="tp-wrap">
+        <span class="tp"><span class="tpdot" style="background:#512BD4"></span>.NET Core / ASP.NET</span>
+        <span class="tp"><span class="tpdot" style="background:#68A063"></span>Node.js</span>
+        <span class="tp"><span class="tpdot" style="background:#3776AB"></span>Python / FastAPI</span>
+        <span class="tp"><span class="tpdot" style="background:#512BD4"></span>Web API / REST</span>
+        <span class="tp"><span class="tpdot" style="background:#0ea5e9"></span>SignalR / WebSockets</span>
+        <span class="tp"><span class="tpdot" style="background:#512BD4"></span>WCF / SOAP</span>
+        <span class="tp"><span class="tpdot" style="background:#10b981"></span>gRPC / Microservices</span>
+        <span class="tp"><span class="tpdot" style="background:#E10098"></span>GraphQL</span>
+        <span class="tp"><span class="tpdot" style="background:#f59e0b"></span>LINQ / EF Core</span>
+      </div>
+    </div>
+    <div class="tc rv"><div class="tc-h" style="color:#0ea5e9;">Frontend &amp; Mobile</div>
+      <div class="tp-wrap">
+        <span class="tp"><span class="tpdot" style="background:#61DAFB"></span>React 18 / Next.js</span>
+        <span class="tp"><span class="tpdot" style="background:#DD0031"></span>Angular 11–17</span>
+        <span class="tp"><span class="tpdot" style="background:#61DAFB"></span>React Native</span>
+        <span class="tp"><span class="tpdot" style="background:#f7df1e"></span>TypeScript / JavaScript</span>
+        <span class="tp"><span class="tpdot" style="background:#764ABC"></span>Redux / Zustand</span>
+        <span class="tp"><span class="tpdot" style="background:#563D7C"></span>Bootstrap 5</span>
+        <span class="tp"><span class="tpdot" style="background:#06B6D4"></span>Tailwind CSS</span>
+        <span class="tp"><span class="tpdot" style="background:#f7df1e"></span>jQuery / AngularJS</span>
+        <span class="tp"><span class="tpdot" style="background:#E44D26"></span>HTML5 / CSS3</span>
+      </div>
+    </div>
+    <div class="tc rv"><div class="tc-h" style="color:#0078D4;">Cloud &amp; DevOps</div>
+      <div class="tp-wrap">
+        <span class="tp"><span class="tpdot" style="background:#0078D4"></span>Azure Functions</span>
+        <span class="tp"><span class="tpdot" style="background:#0078D4"></span>Azure B2C / Blob</span>
+        <span class="tp"><span class="tpdot" style="background:#0078D4"></span>Azure Event Grid / ACS</span>
+        <span class="tp"><span class="tpdot" style="background:#FF9900"></span>AWS Lambda / S3</span>
+        <span class="tp"><span class="tpdot" style="background:#FFCA28"></span>Firebase / Firestore</span>
+        <span class="tp"><span class="tpdot" style="background:#2496ED"></span>Docker</span>
+        <span class="tp"><span class="tpdot" style="background:#0078D4"></span>Azure DevOps / TFS</span>
+        <span class="tp"><span class="tpdot" style="background:#F05032"></span>GitHub / GitHub Actions</span>
+        <span class="tp"><span class="tpdot" style="background:#FF9900"></span>Oracle IDCS</span>
+      </div>
+    </div>
+    <div class="tc rv"><div class="tc-h" style="color:#10b981;">Databases, Search &amp; AI Tools</div>
+      <div class="tp-wrap">
+        <span class="tp"><span class="tpdot" style="background:#CC2927"></span>SQL Server / SSRS</span>
+        <span class="tp"><span class="tpdot" style="background:#336791"></span>PostgreSQL</span>
+        <span class="tp"><span class="tpdot" style="background:#4DB33D"></span>MongoDB</span>
+        <span class="tp"><span class="tpdot" style="background:#0078D4"></span>Cosmos DB</span>
+        <span class="tp"><span class="tpdot" style="background:#005571"></span>Elastic Search / Algolia</span>
+        <span class="tp"><span class="tpdot" style="background:#DC382D"></span>Redis Cache</span>
+        <span class="tp"><span class="tpdot" style="background:#FFCA28"></span>Firebase Realtime DB</span>
+        <span class="tp"><span class="tpdot" style="background:#412991"></span>Wasabi / S3 Storage</span>
+        <span class="tp"><span class="tpdot" style="background:#00A67E"></span>GitHub Copilot / Cursor</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="sec" id="projects">
+  <div class="sec-hdr sec-hdr-center rv">
+    <div class="stag stag-blue">Our Work</div>
+    <h2 class="sh">Projects We've Delivered</h2>
+    <p class="sd">10 enterprise and product projects across mobile, web, cloud and AI — real solutions, real impact.</p>
+  </div>
+  <div class="proj-grid">
+    <div class="proj rv">
+      <span class="ptype" style="background:#f0f9ff;color:#0284c7;">Mobile App</span>
+      <div class="pt">Consumer Services Field App</div>
+      <p class="pd">Cross-platform iOS &amp; Android app for field technicians and customers — job management, photo/doc uploads, work order signing and Azure real-time sync.</p>
+      <div class="pstack"><span class="ps">React Native</span><span class="ps">Azure AD</span><span class="ps">REST API</span><span class="ps">S3/Wasabi</span><span class="ps">Push Notifications</span></div>
+    </div>
+    <div class="proj rv">
+      <span class="ptype" style="background:#f0f9ff;color:#0284c7;">Mobile App</span>
+      <div class="pt">Lead &amp; Referral Tracking App</div>
+      <p class="pd">Lead generation and job tracking — create leads, upload docs, track progress and receive notifications. Seamlessly integrated with backend service management.</p>
+      <div class="pstack"><span class="ps">React Native</span><span class="ps">Azure AD</span><span class="ps">API Integration</span><span class="ps">Document Upload</span></div>
+    </div>
+    <div class="proj rv">
+      <span class="ptype" style="background:#fff7ed;color:#ea580c;">Web App</span>
+      <div class="pt">Consumer Portal — Insurance Domain</div>
+      <p class="pd">Modernized a full insurance/service portal — API workflows, UI enhancements and defect management. Reduced release cycle time and improved system stability.</p>
+      <div class="pstack"><span class="ps">.NET Core API</span><span class="ps">MVC</span><span class="ps">SQL Server</span><span class="ps">CI/CD</span><span class="ps">DevOps</span></div>
+    </div>
+    <div class="proj rv">
+      <span class="ptype" style="background:#fff7ed;color:#ea580c;">Web App</span>
+      <div class="pt">Large-File Archive &amp; Document Management</div>
+      <p class="pd">Scalable platform for uploading, storing and indexing large media — images, videos, PDFs — with Algolia-powered search and Wasabi/S3 storage backend.</p>
+      <div class="pstack"><span class="ps">.NET Core</span><span class="ps">React</span><span class="ps">Algolia</span><span class="ps">Wasabi/S3</span><span class="ps">SQL Server</span></div>
+    </div>
+    <div class="proj rv">
+      <span class="ptype" style="background:#faf5ff;color:#7c3aed;">AI-Enabled Platform</span>
+      <div class="pt">Low-Code Enterprise App Development Platform</div>
+      <p class="pd">Contributed to a platform accelerating app development. Added cloud integrations, reusable modules and AI/LLM features — OpenAI auto-suggestions and workflow AI.</p>
+      <div class="pstack"><span class="ps">React Native</span><span class="ps">React</span><span class="ps">Redux</span><span class="ps">Azure</span><span class="ps">AWS</span><span class="ps">OpenAI</span><span class="ps">Gemini</span><span class="ps">Stripe</span></div>
+    </div>
+    <div class="proj rv">
+      <span class="ptype" style="background:#f0fdf4;color:#059669;">Web App</span>
+      <div class="pt">Team Management &amp; Productivity System</div>
+      <p class="pd">Resource assignment, project tracking, attendance and work logs with Azure B2C authentication and serverless AWS Lambda backend architecture.</p>
+      <div class="pstack"><span class="ps">Angular 11</span><span class="ps">Azure B2C</span><span class="ps">AWS Lambda</span><span class="ps">AWS S3</span><span class="ps">.NET Core</span></div>
+    </div>
+    <div class="proj rv">
+      <span class="ptype" style="background:#fff7ed;color:#ea580c;">Web App</span>
+      <div class="pt">Employee Rewards &amp; Recognition Portal</div>
+      <p class="pd">Enterprise HRTech portal — reward points, budgeting, redemptions and internal reporting. UI revamp, workflow optimisation and full release management.</p>
+      <div class="pstack"><span class="ps">ASP.NET MVC</span><span class="ps">C#</span><span class="ps">AngularJS</span><span class="ps">SQL Server</span><span class="ps">Web API</span></div>
+    </div>
+    <div class="proj rv">
+      <span class="ptype" style="background:#f0fdf4;color:#059669;">Web App</span>
+      <div class="pt">School Parent Portal — EdTech</div>
+      <p class="pd">Portal integrated with school systems — parents access student documents, fee data and registrations. Automated data sync via SQL Jobs and .NET Core APIs.</p>
+      <div class="pstack"><span class="ps">Angular 12</span><span class="ps">.NET Core API</span><span class="ps">SQL Server</span><span class="ps">SQL Jobs</span></div>
+    </div>
+    <div class="proj rv">
+      <span class="ptype" style="background:#faf5ff;color:#7c3aed;">Enterprise</span>
+      <div class="pt">Claims Processing &amp; Workflow Automation</div>
+      <p class="pd">Refactored a legacy insurance claims system — new workflows, WCF services, SSRS reporting, third-party integrations. Full VB.NET to C# migration, zero data loss.</p>
+      <div class="pstack"><span class="ps">VB.NET→C#</span><span class="ps">ASP.NET</span><span class="ps">WCF</span><span class="ps">SQL Server</span><span class="ps">SSRS</span></div>
+    </div>
+    <div class="proj rv">
+      <span class="ptype" style="background:#f0f9ff;color:#0284c7;">Web App</span>
+      <div class="pt">Travel Booking &amp; Aggregation Platform</div>
+      <p class="pd">Multi-provider travel platform — flights, hotels, cars, insurance and packages via XML APIs. Real-time search, booking workflows and multi-vendor payment integration.</p>
+      <div class="pstack"><span class="ps">ASP.NET</span><span class="ps">MVC 2.0</span><span class="ps">C#</span><span class="ps">XML APIs</span><span class="ps">SQL Server</span><span class="ps">jQuery</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- DOMAINS -->
+<section class="sec sec-alt" id="domains">
+  <div class="sec-hdr sec-hdr-center rv">
+    <div class="stag stag-blue">Domain Experience</div>
+    <h2 class="sh">Industries We Serve</h2>
+    <p class="sd">Deep knowledge across 8+ industry verticals — global and Indian enterprise projects.</p>
+  </div>
+  <div class="dom-grid rv">
+    <div class="dom"><div class="dom-ico">🏥</div><div><div class="dom-t">Insurance Tech</div><p class="dom-d">Claims processing, policy portals, workflow automation and compliance systems.</p></div></div>
+    <div class="dom"><div class="dom-ico">👥</div><div><div class="dom-t">HRTech</div><p class="dom-d">Rewards &amp; recognition, appraisal systems, attendance tracking, employee portals.</p></div></div>
+    <div class="dom"><div class="dom-ico">📚</div><div><div class="dom-t">EdTech</div><p class="dom-d">Parent portals, school systems, LMS integrations, academic document workflows.</p></div></div>
+    <div class="dom"><div class="dom-ico">📄</div><div><div class="dom-t">Document Management</div><p class="dom-d">Large-file storage, AI extraction, versioning, approval workflows, media management.</p></div></div>
+    <div class="dom"><div class="dom-ico">✈️</div><div><div class="dom-t">Travel &amp; Booking</div><p class="dom-d">Multi-vendor booking platforms, real-time availability, XML API aggregation.</p></div></div>
+    <div class="dom"><div class="dom-ico">⚙️</div><div><div class="dom-t">Enterprise Workflow</div><p class="dom-d">Business process automation, approval chains, audit trails, role-based access.</p></div></div>
+    <div class="dom"><div class="dom-ico">🛒</div><div><div class="dom-t">E-Commerce</div><p class="dom-d">Custom stores, inventory, multi-payment gateways, order management and analytics.</p></div></div>
+    <div class="dom"><div class="dom-ico">🔗</div><div><div class="dom-t">Real-Time Applications</div><p class="dom-d">Live chat, dashboards, notification hubs using SignalR, ACS and WebSocket architecture.</p></div></div>
+    <div class="dom"><div class="dom-ico">📊</div><div><div class="dom-t">Billing &amp; Finance Tech</div><p class="dom-d">GST billing, invoicing, stock management and financial reporting for Indian SMEs.</p></div></div>
+  </div>
+</section>
+
+<!-- AKSYSPRO -->
+<section id="aksyspro">
+  <div class="pro-wrap">
+    <div class="pro-header rv">
+      <div class="pro-badge">🧾 Our Product — Separate Entity</div>
+      <div class="pro-logo"><em>AK</em>sys<span>Pro</span></div>
+      <div class="pro-tagline">Complete Billing Solution for Indian Businesses</div>
+      <p class="pro-sub">GST invoicing, stock management, fast counter billing, customer records and business reports — one app for every Indian shop and business type.</p>
+      <div class="pro-checks">
+        <span class="pcheck">GST Compliant · GSTR-1 Ready</span>
+        <span class="pcheck">Works Offline</span>
+        <span class="pcheck">WhatsApp Sharing</span>
+        <span class="pcheck">₹ Indian Rupee</span>
+      </div>
+    </div>
+    <div class="pro-feats">
+      <div class="pf rv"><div class="pf-ico">🧾</div><div class="pf-t">GST Invoice Generation</div><p class="pf-d">CGST, SGST, IGST auto-calculated. HSN/SAC lookup, B2B + B2C formats, digital signature, GSTR-1 export.</p><span class="pf-w">All Businesses</span></div>
+      <div class="pf rv"><div class="pf-ico">📦</div><div class="pf-t">Stock Management</div><p class="pf-d">Real-time inventory, low stock alerts, barcode support, expiry tracking, purchase orders and supplier management.</p><span class="pf-w">Kirana · Pharma · Wholesale</span></div>
+      <div class="pf rv"><div class="pf-ico">⚡</div><div class="pf-t">Fast Counter Billing</div><p class="pf-d">Keyboard-first billing for rush hours. Bill a customer in under 30 seconds on touchscreen or desktop PC.</p><span class="pf-w">Retail Counter</span></div>
+      <div class="pf rv"><div class="pf-ico">📊</div><div class="pf-t">Business Reports</div><p class="pf-d">Daily/monthly sales, profit &amp; loss, party-wise outstanding, GST summary, distributor and stock reports.</p><span class="pf-w">Wholesale · Distributor</span></div>
+      <div class="pf rv"><div class="pf-ico">👥</div><div class="pf-t">Customer Records</div><p class="pf-d">Full ledger with purchase history, credit limits and payment reminders. Build repeat business effortlessly.</p><span class="pf-w">All Business Types</span></div>
+      <div class="pf rv"><div class="pf-ico">📱</div><div class="pf-t">WhatsApp Sharing</div><p class="pf-d">Share invoices and payment reminders on WhatsApp — India's most-used business communication channel.</p><span class="pf-w">India-First Feature</span></div>
+    </div>
+    <div class="pro-pricing">
+      <div class="pp rv">
+        <div class="pp-name">Starter</div>
+        <div class="pp-price"><sup>₹</sup>0<sub>/month</sub></div>
+        <p class="pp-desc">Get started, explore all basic features.</p>
+        <ul class="pp-ul">
+          <li>50 invoices per month</li>
+          <li>Basic stock management</li>
+          <li>1 user · WhatsApp share</li>
+          <li class="na">GST reports</li>
+          <li class="na">Priority support</li>
+        </ul>
+        <button class="ppbtn ppbtn-o">Start Free</button>
+      </div>
+      <div class="pp hot rv">
+        <div class="pp-popular">Most Popular</div>
+        <div class="pp-name">Business</div>
+        <div class="pp-price"><sup>₹</sup>499<sub>/month</sub></div>
+        <p class="pp-desc">Full billing + stock for growing shops.</p>
+        <ul class="pp-ul">
+          <li>Unlimited invoices</li>
+          <li>Full stock management</li>
+          <li>3 users · WhatsApp share</li>
+          <li>GST reports + GSTR-1</li>
+          <li>Phone support</li>
+        </ul>
+        <button class="ppbtn ppbtn-s">14-Day Free Trial</button>
+      </div>
+      <div class="pp rv">
+        <div class="pp-name">Enterprise</div>
+        <div class="pp-price"><sup>₹</sup>999<sub>/month</sub></div>
+        <p class="pp-desc">Wholesale, distributors, multi-location.</p>
+        <ul class="pp-ul">
+          <li>Unlimited invoices + users</li>
+          <li>Multi-location stock</li>
+          <li>Advanced reports</li>
+          <li>Dedicated support</li>
+          <li>Partner onboarding</li>
+        </ul>
+        <button class="ppbtn ppbtn-o">Contact Sales</button>
+      </div>
+    </div>
+    <div class="pro-ctas rv">
+      <a href="#contact" class="pcta-p">Get AksysPro Demo →</a>
+      <a href="#contact" class="pcta-s">Become a Distribution Partner ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="sec sec-alt" id="why">
+  <div class="why-grid">
+    <div class="rv">
+      <div class="stag stag-blue">Why AKsys Technologies</div>
+      <h2 class="sh">We Treat Your Project Like Our Own</h2>
+      <p class="sd" style="margin-bottom:28px;">Not just a vendor — a committed technology partner. We understand your business problem before writing a single line of code. Full ownership from requirements to long-term support.</p>
+      <a href="#contact" class="hcta-p" style="display:inline-flex;margin-top:8px;">Start a Conversation →</a>
+    </div>
+    <div class="why-cards">
+      <div class="wc rv"><div class="wc-ico">🏗️</div><div class="wc-t">Architecture First</div><p class="wc-d">Every project starts with clear technical architecture — scalable, clean and future-proof.</p></div>
+      <div class="wc rv"><div class="wc-ico">🌍</div><div class="wc-t">Global Track Record</div><p class="wc-d">Delivered for clients in USA, UK and India. Onsite delivery experience included.</p></div>
+      <div class="wc rv"><div class="wc-ico">🤖</div><div class="wc-t">AI-Augmented Dev</div><p class="wc-d">Copilot, Cursor and ChatGPT used daily — faster delivery, cleaner code, smarter results.</p></div>
+      <div class="wc rv"><div class="wc-ico">🔄</div><div class="wc-t">Full Lifecycle</div><p class="wc-d">Requirements → Design → Build → Deploy → Support. One team, zero handoff chaos.</p></div>
+      <div class="wc rv"><div class="wc-ico">🗣️</div><div class="wc-t">Clear Communication</div><p class="wc-d">Strong requirement analysis, regular updates, zero ambiguity in delivery timelines.</p></div>
+      <div class="wc rv"><div class="wc-ico">📍</div><div class="wc-t">Kota, Rajasthan</div><p class="wc-d">Local presence for Rajasthan businesses. Global delivery capability for remote clients.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <h2>Ready to Build <span>Something Great?</span></h2>
+  <p>Tell us your idea — we'll take it from concept to production.</p>
+  <div class="btns">
+    <a href="#contact" class="hcta-p">Start a Project →</a>
+    <a href="tel:+917976279547" class="hcta-s">📞 +91 79762 79547</a>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="sec" id="contact">
+  <div class="contact-grid">
+    <div class="rv">
+      <div class="stag stag-blue">Get in Touch</div>
+      <h2 class="sh">Let's Talk About Your Project</h2>
+      <p class="sd">Web app, mobile app, cloud, AI or AksysPro — we're here to help.</p>
+      <div class="cinfo">
+        <div class="ci"><div class="ci-ico">📍</div><div><div class="ci-l">Office</div><div class="ci-v">Kota, Rajasthan, India</div></div></div>
+        <div class="ci"><div class="ci-ico">📞</div><div><div class="ci-l">Phone / WhatsApp</div><div class="ci-v"><a href="tel:+917976279547">+91 79762 79547</a></div></div></div>
+        <div class="ci"><div class="ci-ico">✉️</div><div><div class="ci-l">Email</div><div class="ci-v"><a href="mailto:aksystech@hotmail.com">aksystech@hotmail.com</a></div></div></div>
+        <div class="ci"><div class="ci-ico">🌐</div><div><div class="ci-l">Website</div><div class="ci-v"><a href="http://aksyssoftware.com">aksyssoftware.com</a></div></div></div>
+      </div>
+    </div>
+    <div class="rv">
+      <div class="cform">
+        <div class="cf-h">Send Us a Message</div>
+        <form id="cf">
+          <div class="cf-row">
+            <div class="cf-g"><label class="cf-l">Your Name</label><input type="text" class="cf-i" placeholder="Ramesh Sharma" required></div>
+            <div class="cf-g"><label class="cf-l">Phone / WhatsApp</label><input type="tel" class="cf-i" placeholder="+91 98765 43210"></div>
+          </div>
+          <div class="cf-g"><label class="cf-l">Email</label><input type="email" class="cf-i" placeholder="you@company.com" required></div>
+          <div class="cf-g">
+            <label class="cf-l">I Need Help With</label>
+            <select class="cf-s">
+              <option value="">Select a service...</option>
+              <option>Web Application Development</option>
+              <option>Mobile App Development</option>
+              <option>Cloud Architecture</option>
+              <option>AI / LLM Integration</option>
+              <option>API &amp; Microservices</option>
+              <option>E-Commerce Solution</option>
+              <option>AksysPro Billing Software</option>
+              <option>AksysPro Distribution Partner</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="cf-g"><label class="cf-l">Tell Us About Your Project</label><textarea class="cf-ta" placeholder="Describe your requirement, timeline and budget..."></textarea></div>
+          <button type="submit" class="cf-btn">Send Message →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft">
+    <div>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+          <defs><linearGradient id="fg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0ea5e9"/><stop offset="100%" stop-color="#0284c7"/></linearGradient></defs>
+          <circle cx="16" cy="16" r="14.5" stroke="rgba(255,255,255,.15)" stroke-width="1.2" fill="none"/>
+          <line x1="16" y1="4.5" x2="16" y2="16" stroke="rgba(255,255,255,.15)" stroke-width="1.3"/>
+          <line x1="16" y1="16" x2="6.5" y2="25.5" stroke="rgba(255,255,255,.15)" stroke-width="1.3"/>
+          <line x1="16" y1="16" x2="25.5" y2="25.5" stroke="rgba(255,255,255,.15)" stroke-width="1.3"/>
+          <circle cx="16" cy="16" r="5" fill="rgba(255,255,255,.05)" stroke="url(#fg)" stroke-width="1.5"/>
+          <circle cx="16" cy="16" r="2.2" fill="url(#fg)"/>
+          <circle cx="16" cy="4.5" r="2.8" fill="rgba(255,255,255,.05)" stroke="#0ea5e9" stroke-width="1.2"/>
+          <circle cx="16" cy="4.5" r="1.2" fill="#0ea5e9"/>
+          <circle cx="6.5" cy="25.5" r="2.6" fill="rgba(255,255,255,.05)" stroke="#0284c7" stroke-width="1.2"/>
+          <circle cx="6.5" cy="25.5" r="1.1" fill="#0284c7"/>
+          <circle cx="25.5" cy="25.5" r="2.6" fill="rgba(255,255,255,.05)" stroke="#0ea5e9" stroke-width="1.2"/>
+          <circle cx="25.5" cy="25.5" r="1.1" fill="#0ea5e9"/>
+        </svg>
+        <span style="font-size:18px;font-weight:800;color:#fff;letter-spacing:-.5px;"><span style="color:#0ea5e9;">AK</span>sys Technologies</span>
+      </div>
+      <p class="fb-d">Your technology partner from idea to production. Web, Mobile, Cloud and AI solutions for businesses across India and globally. Also makers of AksysPro Billing Solution.</p>
+      <div style="display:flex;gap:7px;flex-wrap:wrap;margin-top:14px;">
+        <span style="font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:4px 10px;border-radius:6px;background:rgba(255,255,255,.06);color:rgba(255,255,255,.35);">Kota · Rajasthan</span>
+        <span style="font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:4px 10px;border-radius:6px;background:rgba(255,255,255,.06);color:rgba(255,255,255,.35);">16+ Years</span>
+        <span style="font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:4px 10px;border-radius:6px;background:rgba(255,255,255,.06);color:rgba(255,255,255,.35);">40+ Projects</span>
+      </div>
+    </div>
+    <div class="fc">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">Web Development</a></li>
+        <li><a href="#services">Mobile Apps</a></li>
+        <li><a href="#ai">AI Integrations</a></li>
+        <li><a href="#services">Cloud Architecture</a></li>
+        <li><a href="#services">API &amp; Microservices</a></li>
+        <li><a href="#services">E-Commerce</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4>AksysPro</h4>
+      <ul>
+        <li><a href="#aksyspro">GST Billing</a></li>
+        <li><a href="#aksyspro">Stock Management</a></li>
+        <li><a href="#aksyspro">Business Reports</a></li>
+        <li><a href="#aksyspro">Pricing Plans</a></li>
+        <li><a href="#contact">Get a Demo</a></li>
+        <li><a href="#contact">Distribution Partner</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+917976279547">+91 79762 79547</a></li>
+        <li><a href="mailto:aksystech@hotmail.com">aksystech@hotmail.com</a></li>
+        <li><a href="http://aksyssoftware.com">aksyssoftware.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="fb-bot">
+    <span>© 2025 AKsys Technologies, Kota, Rajasthan. All rights reserved.</span>
+    <span>Made with ❤️ for Bharat 🇮🇳 &nbsp;·&nbsp; <a href="#aksyspro">AksysPro Billing</a></span>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const nav = document.getElementById('navbar');
+
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 10);
+  });
+
+  const hbg = document.getElementById('hbg');
+  const mn  = document.getElementById('mobNav');
+  hbg.addEventListener('click', () => mn.classList.toggle('open'));
+  mn.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mn.classList.remove('open')));
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('on'); });
+  }, { threshold: 0.07 });
+  document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+
+  const form = document.getElementById('cf');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const btn = form.querySelector('.cf-btn');
+
+    const name    = form.querySelector('input[type="text"]').value.trim();
+    const phone   = form.querySelector('input[type="tel"]').value.trim();
+    const email   = form.querySelector('input[type="email"]').value.trim();
+    const service = form.querySelector('select').value;
+    const message = form.querySelector('textarea').value.trim();
+
+    if (!name || !email) {
+      alert('Please fill in your name and email.');
+      return;
+    }
+
+    const subject = encodeURIComponent('New Enquiry from aksyssoftware.com — ' + (service || 'General'));
+    const body = encodeURIComponent(
+      'Name: ' + name + '\n' +
+      'Phone: ' + (phone || 'Not provided') + '\n' +
+      'Email: ' + email + '\n' +
+      'Service: ' + (service || 'Not selected') + '\n\n' +
+      'Message:\n' + (message || 'No message provided')
+    );
+
+    // Send to both addresses via mailto
+    const to = 'aksystech@hotmail.com,arunyadav13@gmail.com';
+    window.location.href = 'mailto:' + to + '?subject=' + subject + '&body=' + body;
+
+    btn.textContent = '✓ Opening Email Client...';
+    btn.style.background = '#059669';
+    setTimeout(() => {
+      btn.textContent = 'Send Message →';
+      btn.style.background = '';
+      form.reset();
+    }, 3000);
+  });
+});
+</script>
+</body>
+</html>
